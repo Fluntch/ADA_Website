@@ -1,16 +1,19 @@
 ---
 layout: page
-title: About me
-subtitle: Why you'd want to go on a date with me
+title: About Us
+subtitle: 
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+We are ADAholiks, a group of master students from various backgrounds! 
 
-- I rock a great mustache
-- I'm extremely loyal to my family
+To introduce ourselves:
 
-What else do you need?
+- **Fletcher**: Civil Engineering with a minor in Data Science  
+- **Karl**: Materials Science  
+- **Clay**: Digital Humanities  
+- **Oscar**: Digital Humanities  
+- **Finn**: SV with a minor in Data Science  
 
-### My story
+### Our motivation
 
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](https://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+We’re data junkies on a mission to make sense of chaos! Mixing engineering, humanities, and a dash of science, we’re here to crunch numbers, uncover stories, and have some fun while doing it.
