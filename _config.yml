@@ -145,6 +145,7 @@ navbar-var-length: false
 #footer-hover-col: "#0085A1"
 
 # Cool Modern Darker Theme 
+
 # Page Colors 
 page-col: "#E5E5E5" # Light neutral gray 
 text-col: "#222222" # Rich dark gray for sharp contrast 
