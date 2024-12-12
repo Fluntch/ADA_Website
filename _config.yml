@@ -20,10 +20,11 @@ author: ADAHoliks
 ###############################################
 
 navbar-links: ## gives the links listed in a drop down menu top right 
-  About Me: "aboutme"
+  About Us: "aboutme"
   Resources:
     - Beautiful Jekyll: "https://beautifuljekyll.com"
-  Authors' home: "https://deanattali.com"##insert link to website at some point
+    - Our Github to access code : "https://github.com/epfl-ada/ada-2024-project-adaholiks"
+  #Authors' home: "https://deanattali.com"##insert link to website at some point
 
 ################
 # --- Logo --- #
