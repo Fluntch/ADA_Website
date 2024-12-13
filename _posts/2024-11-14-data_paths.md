@@ -4,7 +4,7 @@ title: Paths data
 subtitle: A Wild Ride Through the Path Data!
 comments: true
 mathjax: true
-cover-img: /assets/img/article.jpg
+cover-img: /assets/img/paths.jpg
 thumbnail-img: ""
 author: Finn
 date: 2024-11-14 12:00:00
