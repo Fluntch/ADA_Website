@@ -1,9 +1,8 @@
 ---
 layout: post
 title: Article data
-subtitle: Have a peak here if what we uncovered on the articles interests you
+subtitle: Giddy Up for a Deep Dive into the Article Data!
 cover-img: /assets/img/path.jpg
-thumbnail-img: /assets/img/thumb.png
 share-img: /assets/img/path.jpg
 author: Oscar
 date: 2024-11-15 2024-12-11 12:00:00
