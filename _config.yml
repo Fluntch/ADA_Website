@@ -137,21 +137,22 @@ navbar-var-length: false
 # Personalize the colours in your website. Colour values can be any valid CSS colour
 
 # Page Colors 
-page-col: "#3A3A3A" # Medium dark gray for the page background 
-text-col: "#EAEAEA" # Soft light gray text for good contrast 
-link-col: "#4A90E2" # Cool blue for links that stand out
-hover-col: "#3F7EB1" # Slightly deeper blue for hover effect
+page-col: "#1D1F21" # Dark gray with a slight hint of blue for the background (sleek, modern feel)
+text-col: "#E0E0E0" # Light gray for text, high contrast against the dark background
+link-col: "#4D9FEC" # Soft, vibrant blue for links (not too bright, just enough to stand out)
+hover-col: "#3A83B5" # Darker blue for hover effect, maintaining sleekness
 
 # Navbar Colors 
-navbar-col: "#2C2C2C" # Dark gray navbar with a bit of contrast 
-navbar-text-col: "#EAEAEA" # Light gray text for readability
-navbar-border-col: "#555555" # Slightly lighter border to separate navbar
+navbar-col: "#2A2D31" # Slightly darker than the page background to distinguish the navbar
+navbar-text-col: "#E0E0E0" # Light gray text in the navbar to match page text color
+navbar-border-col: "#444A50" # Darker gray border to subtly separate navbar elements
 
 # Footer Colors 
-footer-col: "#2C2C2C" # Same dark gray as the navbar for consistency 
-footer-text-col: "#B0B0B0" # Lighter gray text in the footer for clarity
-footer-link-col: "#4A90E2" # Matches the link color in the page
-footer-hover-col: "#3F7EB1" # Matching hover color for footer links
+footer-col: "#2A2D31" # Matching the navbar for consistency
+footer-text-col: "#B0B0B0" # Medium gray text for the footer, slightly dimmer than page text
+footer-link-col: "#4D9FEC" # Blue links to match the page links
+footer-hover-col: "#3A83B5" # Same dark blue for hover effect in footer links
+
 
 
 # Alternatively, the navbar, footer, and page background can be set to an image
