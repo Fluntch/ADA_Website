@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: About Us
 cover-img: /assets/img/article.jpg
 ---
