@@ -6,4 +6,4 @@ cover-img: /assets/img/article.jpg
 thumbnail-img: ""
 ---
 
-... Blah blah about some cool info
+... 
