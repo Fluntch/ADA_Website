@@ -21,12 +21,10 @@ author: ADAHoliks
 
 
 navbar-links: ## gives the links listed in a drop down menu top right 
-  Good articles: "aboutus"
-  Best attributes: "aboutus"
+Our team: "aboutus"
   Resources:
     - Beautiful Jekyll: "https://beautifuljekyll.com"
     - Our Github to access code : "https://github.com/epfl-ada/ada-2024-project-adaholiks"
-    - About Us: "aboutus"
   #Authors' home: "https://deanattali.com"##insert link to website at some point
 
 ################
@@ -157,10 +155,9 @@ footer-hover-col: "#3A83B5" # Same dark blue for hover effect in footer links
 
 # Alternatively, the navbar, footer, and page background can be set to an image
 # instead of colour
-
 #navbar-img: "/assets/img/bgimage.png"
 #footer-img: "/assets/img/bgimage.png"
-#page-img: "/assets/img/bgimage.png"
+page-img: "/assets/img/GBU.jpg"
 
 # Suggest a colour for mobile browsers to use as the browser's theme. This is only supported by a few mobile browsers.
 #mobile-theme-col: "#0085A1"
