@@ -19,14 +19,20 @@ author: ADAHoliks
 # --- List of links in the navigation bar --- #
 ###############################################
 
+
 navbar-links: ## gives the links listed in a drop down menu top right 
-  Good articles : "aboutus"
-  Best attributes : "aboutus"
-  Conclusion : "aboutus"
-  Resources:
-    - Beautiful Jekyll: "https://beautifuljekyll.com"
-    - Our Github to access code : "https://github.com/epfl-ada/ada-2024-project-adaholiks"
-    - Our team : "aboutus"
+  Left:
+    - "Home": "/"
+  Center:
+    - "Good articles": "/aboutus"
+    - "Best attributes": "/aboutus"
+    - "Conclusion": "/aboutus"
+  Right:
+    - "Resources":
+        - Beautiful Jekyll: "https://beautifuljekyll.com"
+        - Our Github to access code: "https://github.com/epfl-ada/ada-2024-project-adaholiks"
+        - Our team: "aboutus"
+        
     
   #Authors' home: "https://deanattali.com"##insert link to website at some point
 
