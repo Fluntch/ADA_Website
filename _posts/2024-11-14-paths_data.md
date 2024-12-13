@@ -6,6 +6,7 @@ gh-repo: daattali/beautiful-jekyll
 comments: true
 mathjax: true
 author: Finn
+date: 2024-11-14
 ---
 
 ...
