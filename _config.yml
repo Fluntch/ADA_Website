@@ -21,10 +21,12 @@ author: ADAHoliks
 
 
 navbar-links: ## gives the links listed in a drop down menu top right 
-  About Us: "aboutme"
+  Good articles: "aboutus"
+  Best attributes: "aboutus"
   Resources:
     - Beautiful Jekyll: "https://beautifuljekyll.com"
     - Our Github to access code : "https://github.com/epfl-ada/ada-2024-project-adaholiks"
+    - About Us: "aboutus"
   #Authors' home: "https://deanattali.com"##insert link to website at some point
 
 ################
@@ -149,21 +151,22 @@ navbar-var-length: false
 # Cool Modern Darker Theme 
 
 # Page Colors 
-page-col: "#E5E5E5" # Light neutral gray 
-text-col: "#222222" # Rich dark gray for sharp contrast 
-link-col: "#005BB5" # Dark blue for a professional touch 
-hover-col: "#003F7F" # Deeper blue for hover emphasis 
+page-col: "#2A2A2A" # Dark charcoal gray for the page background 
+text-col: "#E5E5E5" # Light gray text for contrast on the dark background
+link-col: "#FF6F61" # Warm coral for links to stand out
+hover-col: "#D04C3D" # Deeper coral for hover effect
 
 # Navbar Colors 
-navbar-col: "#CFCFCF" # Soft gray for smoothness
-navbar-text-col: "#222222" # Matches the main text color 
-navbar-border-col: "#B5B5B5" # Clean subtle border 
+navbar-col: "#1F1F1F" # Very dark gray for a sleek navbar
+navbar-text-col: "#E5E5E5" # Light gray text for better readability in dark mode
+navbar-border-col: "#333333" # Darker border to subtly separate navbar from content
 
 # Footer Colors 
-footer-col: "#CFCFCF" # Darker than the page to provide structure 
-footer-text-col: "#555555" # Cool, balanced text in the footer 
-footer-link-col: "#222222" # Same as main text but enhances focus on links 
-footer-hover-col: "#005BB5" # Matches primary link hover for consistency 
+footer-col: "#1F1F1F" # Matches the navbar for consistency 
+footer-text-col: "#B0B0B0" # Lighter gray text for easy reading in the footer
+footer-link-col: "#FF6F61" # Matches the link color for uniformity across the site
+footer-hover-col: "#D04C3D" # Deeper coral for hover effect on footer links
+
 
 # Alternatively, the navbar, footer, and page background can be set to an image
 # instead of colour
