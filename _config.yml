@@ -21,7 +21,7 @@ author: ADAHoliks
 
 
 navbar-links: ## gives the links listed in a drop down menu top right 
-Our team: "aboutus"
+  Our team: "aboutus"
   Resources:
     - Beautiful Jekyll: "https://beautifuljekyll.com"
     - Our Github to access code : "https://github.com/epfl-ada/ada-2024-project-adaholiks"
