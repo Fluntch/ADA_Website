@@ -6,8 +6,6 @@ comments: true
 mathjax: true
 cover-img: /assets/img/paths.jpg
 thumbnail-img: ""
-author: Finn
-date: 2024-11-14 12:00:00
 ---
 
 ...
