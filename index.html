@@ -16,8 +16,8 @@ So, partner, ready to ride into the unknown? Let’s hit the dusty trail and unr
 
 # Recent Blog Posts
 
-{% assign posts = site.posts | where: "title", "Data Articles" %}
-{% assign posts = posts | concat: site.posts | where: "title", "Data Paths" %}
+{% assign posts = site.posts | where: "title", "Article data" %}
+{% assign posts = posts | concat: site.posts | where: "title", "Paths data" %}
 
 {% for post in posts %}
   <div class="blog-post">
