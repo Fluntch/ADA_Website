@@ -41,7 +41,10 @@ cover-img: /assets/img/GBU.jpg
   Some paths are quick trails to victory, while others are just false leads or dead ends in the wild west of Wikispeedia.
 </p>
 
-{% include_relative test.md %}
+{% capture my_content %}
+  {% include_relative test.md %}
+{% endcapture %}
+{{ my_content | markdownify }}
 
 
 
