@@ -782,6 +782,11 @@ nav.top-nav-short-permanent ~ header > .intro-header.big-img {
   }
 }
 
+iframe {
+    border: none;  /* Removes the default border */
+    box-shadow: none;  /* Removes any shadow effect */
+}
+
 /* --- Pagination --- */
 
 .pagination {
