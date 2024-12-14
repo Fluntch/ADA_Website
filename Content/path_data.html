@@ -1,27 +1,19 @@
-<section id="good-trails">
-    <h4>Finished Trails</h4>
-    <p>When a cowboy successfully reaches their target, it’s a trail well-blazed! But even among these, we have to ensure fairness and accuracy. Here's how we sift out only the best trails :</p>
-    
+<section id="trail-analysis">
+    <h3>Finished Trails</h3>
+    <p>When a cowboy reaches their target, it’s a trail well-blazed! But even among these, we sift out only the best trails:</p>
     <ul>
-        <li>
-            <strong>One Trail Per Cowboy-Target Pair</strong><br>
-            Cowboys are smart—they sometimes retrace their steps to learn the best route. However, we only keep the first unique trail for each cowboy and trail pair to ensure we aren’t biased by repeated attempts.
-        </li>
-        
-        <li>
-            <strong>Fair Share of Trails</strong><br>
-            Some trails are overly popular—like the shortcut everyone loves. We cap the number of times a trail can appear (no more than 5 for each start-target pair), ensuring no trail overshadows others.
-        </li>
-
-        <li>
-            <strong>No Trails to Nowhere</strong><br>
-            A horse can’t travel to the same spot it starts from—those trails (with distance = 0) are removed.
-        </li>
-        
-        <li>
-            <strong>Outliers Beware</strong><br>
-            Using the Interquartile Range (IQR) method, we rope in the good trails and leave out the statistical outlaws. For every group of trails with the same minimum distance (number of clicks to target), we remove those with extreme lengths or durations.
-        </li>
+        <li><strong>One Trail Per Cowboy-Target Pair:</strong> Cowboys are smart—they sometimes retrace their steps to learn the best route. However, we only keep the first unique trail for each cowboy and trail pair to ensure we aren’t biased by repeated attempts..</li>
+        <li><strong>Fair Share of Trails:</strong> Limit each start-target pair to 5 trails to prevent overrepresentation.</li>
+        <li><strong>No Trails to Nowhere:</strong> Remove trails with distance = 0.</li>
+        <li><strong>Outliers Beware:</strong> Using the Interquartile Range (IQR) method, we rope in the good trails and leave out the statistical outlaws. For every group of trails with the same minimum distance (number of clicks to target), we remove those with extreme lengths or durations.</li>
     </ul>
+
+    <h3>Unfinished Trails</h3>
+    <p>Not every cowboy reaches their target, but even these trails tell a story:</p>
+    <ol>
+        <li><strong>True Failures Only:</strong> Analyse only trails where the cowboy actively stopped (failure reasons like "timeout" are removed). This ensures we’re only analyzing serious attempts.</li>
+        <li><strong>Outlier Lengths:</strong> Exclude unusually long trails using the IQR method.</li>
+        <li><strong>Trail Sanity Check:</strong> If the simplified trail (removing loops) is shorter than the minimum possible distance, we mark it as implausible and exclude it. (.</li>
+    </ol>
 </section>
 
