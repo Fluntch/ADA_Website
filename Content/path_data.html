@@ -1,5 +1,5 @@
 <section id="trail-analysis">
-    <h3>Finished Trails</h3>
+    <h4>Finished Trails</h4>
     <p>When a cowboy reaches their target, it’s a trail well-blazed! But even among these, we sift out only the best trails:</p>
     <ul>
         <li><strong>One Trail Per Cowboy-Target Pair:</strong> Cowboys are smart—they sometimes retrace their steps to learn the best route. However, we only keep the first unique trail for each cowboy and trail pair to ensure we aren’t biased by repeated attempts..</li>
@@ -8,7 +8,7 @@
         <li><strong>Outliers Beware:</strong> Using the Interquartile Range (IQR) method, we rope in the good trails and leave out the statistical outlaws. For every group of trails with the same minimum distance (number of clicks to target), we remove those with extreme lengths or durations.</li>
     </ul>
 
-    <h3>Unfinished Trails</h3>
+    <h4>Unfinished Trails</h4>
     <p>Not every cowboy reaches their target, but even these trails tell a story:</p>
     <ol>
         <li><strong>True Failures Only:</strong> Analyse only trails where the cowboy actively stopped (failure reasons like "timeout" are removed). This ensures we’re only analyzing serious attempts.</li>
