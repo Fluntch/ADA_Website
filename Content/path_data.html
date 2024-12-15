@@ -21,20 +21,22 @@
 
 <section id="trail-analysis">
     <b>Finished Trails</b>
-    <p>When a cowboy reaches their target, it’s a trail well-blazed! But even among these, we sift out only the best trails:</p>
+    <p>We refine the completed paths by applying the following criteria:</p>
     <ul>
         <li><strong>One Trail Per Cowboy-Target Pair:</strong> Cowboys are smart—they sometimes retrace their steps to learn the best route. However, we only keep the first unique trail for each cowboy and trail pair to ensure we aren’t biased by repeated attempts..</li>
-        <li><strong>Fair Share of Trails:</strong> Limit each start-target pair to 5 trails to prevent overrepresentation.</li>
-        <li><strong>No Trails to Nowhere:</strong> Remove trails with distance = 0.</li>
-        <li><strong>Outliers Beware:</strong> Using the Interquartile Range (IQR) method, we rope in the good trails and leave out the statistical outlaws. For every group of trails with the same minimum distance (number of clicks to target), we remove those with extreme lengths or durations.</li>
+        <li><strong>Fair Share of Trails:</strong> Each start-target pair is limited to 5 trails to prevent overrepresentation.</li>
+        <li><strong>No Trails to Nowhere:</strong> Trails with a distance of 0 are excluded.</li>
+        <li><strong>Outliers Beware:</strong> Using the Interquartile Range (IQR) method, we rope in the good trails and leave out the statistical outlaws. we filter out trails with extreme lengths or durations.</li>
     </ul>
 
     <b>Unfinished Trails</b>
-    <p>Not every cowboy reaches their target, but even these trails tell a story:</p>
+    <p>Even incomplete paths provide valuable insights:</p>
     <ol>
         <li><strong>True Failures Only:</strong> Analyse only trails where the cowboy actively stopped (failure reasons like "timeout" are removed). This ensures we’re only analyzing serious attempts.</li>
         <li><strong>Outlier Lengths:</strong> Exclude unusually long trails using the IQR method.</li>
-        <li><strong>Trail Sanity Check:</strong> If the simplified trail (removing loops) is shorter than the minimum possible distance, we mark it as implausible and exclude it. (.</li>
+        <li><strong>Trail Sanity Check:</strong> If the simplified trail is shorter than the minimum possible distance, we mark it as implausible and exclude it. (.</li>
     </ol>
 </section>
+
+
 
