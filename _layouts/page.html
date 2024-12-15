@@ -4,118 +4,139 @@ layout: base
 
 {% include header.html type="page" %}
 
-<nav class="table-of-contents">
-  <ul>
-    <li><a href="#Article-Data-Presentation">Article Data Presentation</a></li>
-    <li><a href="#Played-Paths-Data-Insight">Played Paths Data Insight</a></li>
-  </ul>
-</nav>
+<div class="layout-wrapper">
+  <!-- Menu (Left Column) -->
+  <nav class="table-of-contents">
+    <ul>
+      <li><a href="#Article-Data-Presentation">Article Data Presentation</a></li>
+      <li><a href="#Played-Paths-Data-Insight">Played Paths Data Insight</a></li>
+    </ul>
+  </nav>
 
+  <!-- Main Content (Right Column) -->
+  <main class="{% if page.full-width %} container-fluid {% else %} container-md {% endif %}">
+    <div class="row">
+      <div class="{% if page.full-width %} col {% else %} col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 {% endif %}">
+        {% if page.before-content %}
+          <div class="before-content">
+            {% for file in page.before-content %}
+              {% include {{ file }} %}
+            {% endfor %}
+          </div>
+        {% endif %}
 
-<main class="{% if page.full-width %} container-fluid {% else %} container-md {% endif %}">
-  <div class="row">
-    <div class="{% if page.full-width %} col {% else %} col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 {% endif %}">
-      {% if page.before-content %}
-        <div class="before-content">
-          {% for file in page.before-content %}
-            {% include {{ file }} %}
-          {% endfor %}
-        </div>
-      {% endif %}
+        {{ content }}
 
-      {{ content }}
+        {% if page.after-content %}
+          <div class="after-content">
+            {% for file in page.after-content %}
+              {% include {{ file }} %}
+            {% endfor %}
+          </div>
+        {% endif %}
 
-      {% if page.after-content %}
-        <div class="after-content">
-          {% for file in page.after-content %}
-            {% include {{ file }} %}
-          {% endfor %}
-        </div>
-      {% endif %}
-
-      {% include comments.html %}
+        {% include comments.html %}
+      </div>
     </div>
-  </div>
-</main>
+  </main>
+</div>
 
 <style>
+  /* Wrapper for the menu and main content */
+  .layout-wrapper {
+    display: flex; /* Side-by-side layout */
+    flex-direction: row;
+  }
+
+  /* Left column for the menu */
   .table-of-contents {
-      position: sticky; /* Makes the menu stick */
-      top: 0; /* Sticks the menu to the top of the viewport */
-      z-index: 1000; /* Ensures it stays above other elements */
-      background-color: #000; /* Black background for contrast */
-      padding: 10px; /* Adds spacing around the menu */
-      border-left: 2px solid #0073b1; /* Keeps the left border styling */
+    width: 250px; /* Fixed width for the menu */
+    position: sticky; /* Sticks to the viewport while scrolling */
+    top: 0; /* Sticks the menu to the top */
+    height: 100vh; /* Full height of the viewport */
+    z-index: 1000;
+    background-color: #222; /* Change background color */
+    color: white; /* Text color */
+    padding: 20px; /* Adds padding inside the menu */
+    border-right: 2px solid #0073b1; /* Adds a right border */
+    box-sizing: border-box; /* Includes padding in width calculation */
   }
-  
+
+  /* Menu links */
   .table-of-contents ul {
-      list-style-type: none; /* Remove bullet points */
-      padding: 0;
-      margin: 0;
+    list-style-type: none; /* Remove bullet points */
+    padding: 0;
+    margin: 0;
   }
-  
+
   .table-of-contents li {
-      margin: 10px 0; /* Adds spacing between links */
+    margin: 10px 0; /* Adds spacing between links */
   }
-  
+
   .table-of-contents a {
-      text-decoration: none; /* Remove underline */
-      font-weight: bold;
-      color: white; /* Change font color to white */
-      transition: color 0.3s; /* Smooth transition for hover and active states */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold;
+    color: white; /* Change font color to white */
+    transition: color 0.3s; /* Smooth transition for hover and active states */
   }
-  
+
   .table-of-contents a:hover {
-      text-decoration: underline;
-      color: #0073b1; /* Highlight with blue on hover */
+    text-decoration: underline;
+    color: #0073b1; /* Highlight with blue on hover */
   }
-  
+
   .table-of-contents a.active {
-      color: #0073b1; /* Indicate active section with blue text */
-      font-weight: bold;
-      text-decoration: underline;
+    color: #0073b1; /* Active link color */
+    font-weight: bold;
+    text-decoration: underline;
   }
-  </style>
-  
+
+  /* Main content area */
+  main {
+    flex: 1; /* Take up remaining space */
+    padding: 20px; /* Adds padding around the content */
+    box-sizing: border-box; /* Includes padding in width calculation */
+  }
+</style>
+
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const sections = document.querySelectorAll("section[id]");
-      const navLinks = document.querySelectorAll(".table-of-contents a");
-    
-      // Highlight the current section as the user scrolls
-      window.addEventListener("scroll", () => {
-        let currentSection = "";
-    
-        sections.forEach((section) => {
-          const sectionTop = section.offsetTop - 100; // Adjust based on sticky menu height
-          const sectionHeight = section.offsetHeight;
-          if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-            currentSection = section.getAttribute("id");
-          }
-        });
-    
-        navLinks.forEach((link) => {
-          link.classList.remove("active");
-          if (link.getAttribute("href").includes(currentSection)) {
-            link.classList.add("active");
-          }
-        });
+  document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll(".table-of-contents a");
+
+    // Highlight the current section as the user scrolls
+    window.addEventListener("scroll", () => {
+      let currentSection = "";
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop - 100; // Adjust based on sticky menu height
+        const sectionHeight = section.offsetHeight;
+        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+          currentSection = section.getAttribute("id");
+        }
       });
-    
-      // Smooth scrolling on menu clicks
-      document.querySelectorAll('.table-of-contents a').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-    
-          const targetId = this.getAttribute('href').slice(1);
-          const targetSection = document.getElementById(targetId);
-    
-          targetSection.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
+
+      navLinks.forEach((link) => {
+        link.classList.remove("active");
+        if (link.getAttribute("href").includes(currentSection)) {
+          link.classList.add("active");
+        }
+      });
+    });
+
+    // Smooth scrolling on menu clicks
+    document.querySelectorAll('.table-of-contents a').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute('href').slice(1);
+        const targetSection = document.getElementById(targetId);
+
+        targetSection.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
         });
       });
     });
+  });
 </script>
-    
