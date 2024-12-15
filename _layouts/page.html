@@ -42,7 +42,7 @@ layout: base
   </main>
 </div>
 
-<footer>
+<footer class="site-footer">
   <p>Footer content goes here.</p>
 </footer>
 
@@ -51,8 +51,7 @@ layout: base
   .layout-wrapper {
     display: flex; /* Creates a side-by-side layout */
     flex-direction: row; /* Menu on the left, content on the right */
-    min-height: 100vh; /* Use min-height instead of height */
-    overflow: visible; /* Prevent sticky issues */
+    min-height: 100vh; /* Ensures the layout spans the full viewport height */
   }
 
   /* Sticky Menu */
@@ -60,14 +59,14 @@ layout: base
     width: 250px; /* Fixed width for the menu */
     position: sticky; /* Enables sticky positioning */
     top: 0; /* Sticks to the top of the viewport */
-    max-height: 100vh; /* Ensures it doesn’t exceed the viewport */
+    height: 100vh; /* Full height of the viewport */
     overflow-y: auto; /* Allow scrolling if content exceeds height */
     z-index: 1000; /* Ensure it stays above other content */
     background-color: #1D1F21; /* Dark gray background */
     color: #E0E0E0; /* Light gray text */
     padding: 20px; /* Adds padding around the menu */
     box-sizing: border-box; /* Includes padding in the width/height */
-    border-right: 1px solid #0073b1; /* Optional border to separate menu */
+    border-right: none; /* Removes blue line */
   }
 
   /* Menu links */
@@ -105,16 +104,23 @@ layout: base
     padding: 20px; /* Adds padding around the content */
     padding-top: 80px; /* Pushes the text below the sticky menu */
     box-sizing: border-box; /* Includes padding in width calculation */
-    overflow: visible; /* Prevent conflicts with sticky elements */
   }
 
   /* Footer Styling */
-  footer {
+  .site-footer {
     background-color: #1D1F21; /* Match menu background color */
     color: #E0E0E0; /* Match menu text color */
     text-align: center;
     padding: 10px;
     box-sizing: border-box;
+    margin-top: auto; /* Pushes the footer to the bottom of the page */
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the entire body spans the viewport height */
+    margin: 0; /* Remove default body margins */
   }
 </style>
 
