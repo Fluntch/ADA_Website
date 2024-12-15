@@ -7,7 +7,11 @@ layout: base
 <div class="layout-wrapper">
   <!-- Menu (Left Column) -->
   <nav class="table-of-contents">
-    <ul></ul> <!-- Dynamically populated by JavaScript -->
+    <ul>
+      <li><a href="#Introduction">Introduction</a></li>
+      <li><a href="#Article-Data-Presentation">Article Data Presentation</a></li>
+      <li><a href="#Played-Paths-Data-Insight">Played Paths Data Insight</a></li>
+    </ul>
   </nav>
 
   <!-- Main Content (Right Column) -->
@@ -38,28 +42,32 @@ layout: base
   </main>
 </div>
 
+<footer>
+  <p>Footer content goes here.</p>
+</footer>
+
 <style>
   /* Wrapper for the menu and main content */
   .layout-wrapper {
-    display: flex; /* Side-by-side layout */
-    flex-direction: row;
-    height: 100vh; /* Full height of the viewport */
-    overflow: visible; /* Prevent overflow issues */
+    display: flex; /* Creates a side-by-side layout */
+    flex-direction: row; /* Menu on the left, content on the right */
+    min-height: 100vh; /* Use min-height instead of height */
+    overflow: visible; /* Prevent sticky issues */
   }
 
-  /* Left column for the menu */
+  /* Sticky Menu */
   .table-of-contents {
     width: 250px; /* Fixed width for the menu */
-    position: sticky; /* Sticks to the viewport while scrolling */
-    top: 0; /* Sticks the menu to the top */
-    height: 100vh; /* Full height of the viewport */
-    z-index: 1000; /* Ensures it stays above other elements */
+    position: sticky; /* Enables sticky positioning */
+    top: 0; /* Sticks to the top of the viewport */
+    max-height: 100vh; /* Ensures it doesn’t exceed the viewport */
+    overflow-y: auto; /* Allow scrolling if content exceeds height */
+    z-index: 1000; /* Ensure it stays above other content */
     background-color: #1D1F21; /* Dark gray background */
-    color: #E0E0E0; /* Light gray text color */
-    padding: 20px; /* Adds padding inside the menu */
-    box-sizing: border-box; /* Includes padding in width calculation */
-    overflow-y: auto; /* Allows scrolling if the menu overflows */
-    border-right: none; /* Removes any blue bar */
+    color: #E0E0E0; /* Light gray text */
+    padding: 20px; /* Adds padding around the menu */
+    box-sizing: border-box; /* Includes padding in the width/height */
+    border-right: 1px solid #0073b1; /* Optional border to separate menu */
   }
 
   /* Menu links */
@@ -99,33 +107,23 @@ layout: base
     box-sizing: border-box; /* Includes padding in width calculation */
     overflow: visible; /* Prevent conflicts with sticky elements */
   }
+
+  /* Footer Styling */
+  footer {
+    background-color: #1D1F21; /* Match menu background color */
+    color: #E0E0E0; /* Match menu text color */
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+  }
 </style>
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const tableOfContents = document.querySelector(".table-of-contents ul");
-    const sections = document.querySelectorAll("section[id]");
-
-    // Clear existing menu items
-    tableOfContents.innerHTML = "";
-
-    // Generate menu items dynamically
-    sections.forEach((section) => {
-      const sectionId = section.getAttribute("id");
-      const sectionTitle = section.querySelector("h2")?.innerText || sectionId;
-
-      const listItem = document.createElement("li");
-      const link = document.createElement("a");
-      link.href = `#${sectionId}`;
-      link.textContent = sectionTitle;
-
-      listItem.appendChild(link);
-      tableOfContents.appendChild(listItem);
-    });
-
-    // Highlight the current section as the user scrolls
     const navLinks = document.querySelectorAll(".table-of-contents a");
 
+    // Highlight the current section as the user scrolls
+    const sections = document.querySelectorAll("section[id]");
     window.addEventListener("scroll", () => {
       let currentSection = "";
 
@@ -146,7 +144,7 @@ layout: base
     });
 
     // Smooth scrolling on menu clicks
-    document.querySelectorAll('.table-of-contents a').forEach(anchor => {
+    navLinks.forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
 
