@@ -11,15 +11,16 @@
 
 <p>Let me tell you about simplified trails, partner. A simplified path is one where we’ve cleaned things up by removing any unnecessary loops and backtracking. We’re only left with the most direct route that the cowboy took to reach their target, cutting out the fluff and leaving behind just the essentials.</p>
 
-<p>Below is an interactive graph that shows the distribution of path lengths for both finished and unfinished cowboy trails. You can toggle between different path types to compare the journey lengths.</p>
+<p>Below is the distribution of path lengths for the finished cowboy trails. You can toggle between different path types to compare the journey lengths.</p>
 
 <iframe src="assets/data/path_length_distribution_toggle_unfiltered.html" width="90%" height="300px" style="display: block; margin: 0 auto;"></iframe>
 
 <p>Interesting insights ahead, partner! Looks like some trails wander far and wide, much longer than the rest. Maybe those cowboys were out sightseein’, or perhaps they just took the scenic route to soak up the prairie sun.</p>
 
+<p><strong>Let’s take a closer look at how we ensure only the best trails are considered in our analysis :</strong></p>
 
 <section id="trail-analysis">
-    <h4>Finished Trails</h4>
+    <b>Finished Trails</b>
     <p>When a cowboy reaches their target, it’s a trail well-blazed! But even among these, we sift out only the best trails:</p>
     <ul>
         <li><strong>One Trail Per Cowboy-Target Pair:</strong> Cowboys are smart—they sometimes retrace their steps to learn the best route. However, we only keep the first unique trail for each cowboy and trail pair to ensure we aren’t biased by repeated attempts..</li>
@@ -28,7 +29,7 @@
         <li><strong>Outliers Beware:</strong> Using the Interquartile Range (IQR) method, we rope in the good trails and leave out the statistical outlaws. For every group of trails with the same minimum distance (number of clicks to target), we remove those with extreme lengths or durations.</li>
     </ul>
 
-    <h4>Unfinished Trails</h4>
+    <b>Unfinished Trails</b>
     <p>Not every cowboy reaches their target, but even these trails tell a story:</p>
     <ol>
         <li><strong>True Failures Only:</strong> Analyse only trails where the cowboy actively stopped (failure reasons like "timeout" are removed). This ensures we’re only analyzing serious attempts.</li>
