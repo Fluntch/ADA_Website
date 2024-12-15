@@ -12,7 +12,7 @@ To introduce ourselves:
 
 - **[Clay](https://github.com/ccpfoye)**: Digital Humanities 
 - **[Finn](https://github.com/FinnWeikert)**: SV with a minor in Data Science  
-- **[Fletcher](https://github.com/Fluntch)**: Civil Engineering with a minor in Data Science  
+- **[Fletcher](https://github.com/Fluntch)**: Civil Engineering with a minor in Data Science &#x1F1EC;&#x1F1E7;
 - **[Karl](https://github.com/kabdelno)**: Materials Science with a minor in Computational  Science 
 - **[Oscar](https://github.com/Ogoud)**: Digital Humanities  
  
