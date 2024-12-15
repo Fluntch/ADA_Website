@@ -1,0 +1,51 @@
+<p> As any cowboy needs his trusty steed, so does a brave wikispeedia adventurer need a good article. But what makes an article good? Or better than another? Can one even qunatify such metrics?</p>
+
+
+
+
+<h5> Defining article attributes </h5>
+
+<p> Like a good horse helping our valiant cowboy cross the expanse of the Mojave desert, a good article should be able to get you anywhere. The cowboy initially hypothesises that hyperlink density could one of the most important article attributes. The more articles you can get to, the better. </p>
+<p> Hyperlink density was computed by dividing the number of hyperlinks by the total character length of the article. This helps weed out list articles that will naturally have a high hyperlink density. The graph below highlights the results of this analysis. </p>
+<!-- Add the graph tomorrow -->
+
+<!-- Here not used as an attribute -->
+<p> Similarly to hyperink density, an article's place on the graph of all articles in wikispeedia is a powerful tool that can help our cowboy choose his steed. The more an article is present on the shortest paths of two different articles, the better its chances of ensuring that our cowboy gets to his destination. </p>
+<p> Such an attribute could be quantified by dividing the number of times an article appears in a shortest path between two articles by the number of shortest paths between any two articles. The results of this analysis are presented below. </p>
+<!-- Add the graph tomorrow -->
+
+<p> The semantic distance of different article titles can be also taken into account. It is hypothesised that articles will generally have more hyperlinks to articles on topics of a similar theme. <!-- Is it? -->
+    Article titles are represented by as vector embeddings. Dimensionality reduction and t-SNE are then employed to obtain a three dimensional graph representing the links between all articles. </p>
+<!-- mets la photo demain -->
+<p> But how can we translate horse to English and maths? The answer was given to us thousands of years ago by a Greek man named Euclid. Taking the United States as an example, one could take the euclidean distance of all of its semantic neighbours into account. </p>
+<!-- Mets l'exemple donné dans le notebook, still don't really understand how the results were shown -->
+
+<p> In spite of the harsh realities of the wild west, some cowboys remain attached to some of the finer and more sophisticated aspects of life. Such cowboyes might prefer choosing a steed with a rich and deep knowledge of the English language. To help our cowboy choose his steed, an article's vocabulary richness can be taken as a potential attribute.</p>
+<!-- Add the graph tomorrow -->
+
+
+
+
+
+<h5> Scoring articles </h5>
+
+<p> Our cowboy is in a hurry to protect his herd of cattle from marauding ravers! He does not have the time to look at all of this data and would prefer to have a single quantifiable metric to evaluate how good his steed is. </p>
+<p> To do so, different article scores were defined. </p>
+<ul>
+    <li><strong> A weighed average score that computes the average path weight for an article across all paths it appears in </strong></li>
+    <li><strong> A detour ratio that indicates how often a specific article was included in path backtracks (exact name to be changed after) </strong></li>
+    <li><strong> An unfinished ratio score that quantifies how often an article appears in an unfinished path</strong></li>
+    <li><strong> A "c-weight" average score, identical to the weighed average score with the difference of taking into account path speed instead of weight </strong></li>
+</ul>
+
+<p> Let's take a look at how these scores performed!</p>
+<!-- put the graphs with the correlations -->
+<p> Hmm, our cowboy is not convinced by these scores as they do not seem to be correlated to one another whatsoever.</p>
+<p> He decides to define his own composite score that takes into account the weighed average score, detour ratio and unfinished ratio scores. Being in a hurry, the cowboy chooses his own weights. </p>
+<p> With this new composite score, the cowboy decides to take a look at the top horses before traversing the desert.</p>
+<!-- Put one of the tables that are in the notebook? don't really know what else I could use here or how to exactly interpret these results -->
+<p> Interesting the cowboy thinks! He picks the (insert top article name) horse and rides off into the wild. </p>
+
+<h5> Hold on...</h5>
+<p> As the cowboy rides off into the waste, he comes to wonder if his composite score correlates with the attributes he had previously determined. That is to say, did he make the good score choice? </p>
+<!-- no data after this point on the notebook, waiting for the next push -->
