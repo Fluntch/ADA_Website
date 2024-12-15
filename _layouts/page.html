@@ -10,6 +10,7 @@ layout: base
     <ul>
       <li><a href="#Article-Data-Presentation">Article Data Presentation</a></li>
       <li><a href="#Played-Paths-Data-Insight">Played Paths Data Insight</a></li>
+      <li> <a href="Introduction"> Introduction </a></li>
     </ul>
   </nav>
 
@@ -46,6 +47,8 @@ layout: base
   .layout-wrapper {
     display: flex; /* Side-by-side layout */
     flex-direction: row;
+    height: 100vh; /* Full height of the viewport */
+    overflow: visible; /* Prevent overflow issues */
   }
 
   /* Left column for the menu */
@@ -54,13 +57,13 @@ layout: base
     position: sticky; /* Sticks to the viewport while scrolling */
     top: 0; /* Sticks the menu to the top */
     height: 100vh; /* Full height of the viewport */
-    z-index: 1000;
-    background-color: #1D1F21; /* Change background color */
-    color: #E0E0E0; /* Text color */
+    z-index: 1000; /* Ensures it stays above other elements */
+    background-color: #1D1F21; /* Dark gray background */
+    color: #E0E0E0; /* Light gray text color */
     padding: 20px; /* Adds padding inside the menu */
-    /* Removed blue border */
-    border-right: 0; /* Removed blue bar entirely */
     box-sizing: border-box; /* Includes padding in width calculation */
+    overflow-y: auto; /* Allows scrolling if the menu overflows */
+    border-right: none; /* Removes any blue bar */
   }
 
   /* Menu links */
@@ -77,7 +80,7 @@ layout: base
   .table-of-contents a {
     text-decoration: none; /* Remove underline */
     font-weight: bold;
-    color: white; /* Change font color to white */
+    color: #E0E0E0; /* Matches light gray text */
     transition: color 0.3s; /* Smooth transition for hover and active states */
   }
 
@@ -96,10 +99,12 @@ layout: base
   main {
     flex: 1; /* Take up remaining space */
     padding: 20px; /* Adds padding around the content */
-    padding-top: 60px; /* Pushes the text below the sticky menu */
+    padding-top: 80px; /* Pushes the text below the sticky menu */
     box-sizing: border-box; /* Includes padding in width calculation */
+    overflow: visible; /* Prevent conflicts with sticky elements */
   }
 </style>
+
 
 
 <script>
