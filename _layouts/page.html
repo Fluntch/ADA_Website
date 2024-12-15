@@ -7,11 +7,7 @@ layout: base
 <div class="layout-wrapper">
   <!-- Menu (Left Column) -->
   <nav class="table-of-contents">
-    <ul>
-      <li><a href="#Article-Data-Presentation">Article Data Presentation</a></li>
-      <li><a href="#Played-Paths-Data-Insight">Played Paths Data Insight</a></li>
-      <li> <a href="Introduction"> Introduction </a></li>
-    </ul>
+    <ul></ul> <!-- Dynamically populated by JavaScript -->
   </nav>
 
   <!-- Main Content (Right Column) -->
@@ -105,14 +101,31 @@ layout: base
   }
 </style>
 
-
-
 <script>
   document.addEventListener("DOMContentLoaded", function () {
+    const tableOfContents = document.querySelector(".table-of-contents ul");
     const sections = document.querySelectorAll("section[id]");
-    const navLinks = document.querySelectorAll(".table-of-contents a");
+
+    // Clear existing menu items
+    tableOfContents.innerHTML = "";
+
+    // Generate menu items dynamically
+    sections.forEach((section) => {
+      const sectionId = section.getAttribute("id");
+      const sectionTitle = section.querySelector("h2")?.innerText || sectionId;
+
+      const listItem = document.createElement("li");
+      const link = document.createElement("a");
+      link.href = `#${sectionId}`;
+      link.textContent = sectionTitle;
+
+      listItem.appendChild(link);
+      tableOfContents.appendChild(listItem);
+    });
 
     // Highlight the current section as the user scrolls
+    const navLinks = document.querySelectorAll(".table-of-contents a");
+
     window.addEventListener("scroll", () => {
       let currentSection = "";
 
