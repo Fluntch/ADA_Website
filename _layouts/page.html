@@ -47,11 +47,19 @@ layout: base
 </footer>
 
 <style>
-  /* Wrapper for the menu and main content */
+  /* Ensure the body spans the full height of the viewport */
+  body {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    min-height: 100vh; /* Ensure body height matches the viewport */
+    margin: 0; /* Remove default body margins */
+  }
+
+  /* Layout wrapper for menu and main content */
   .layout-wrapper {
-    display: flex; /* Creates a side-by-side layout */
+    display: flex; /* Side-by-side layout */
+    flex: 1; /* Ensures it takes all available space between header and footer */
     flex-direction: row; /* Menu on the left, content on the right */
-    min-height: 100vh; /* Ensures the layout spans the full viewport height */
   }
 
   /* Sticky Menu */
@@ -114,13 +122,6 @@ layout: base
     padding: 10px;
     box-sizing: border-box;
     margin-top: auto; /* Pushes the footer to the bottom of the page */
-  }
-
-  body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Ensure the entire body spans the viewport height */
-    margin: 0; /* Remove default body margins */
   }
 </style>
 
