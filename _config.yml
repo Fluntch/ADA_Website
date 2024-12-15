@@ -137,7 +137,7 @@ navbar-var-length: false
 # Page Colors 
 page-col: "#1D1F21" # Dark gray with a slight hint of blue for the background (sleek, modern feel)
 text-col: "#E0E0E0" # Light gray for text, high contrast against the dark background
-link-col: "#4D9FEC" # Soft, vibrant blue for links (not too bright, just enough to stand out)
+link-col: "#E0E0E0" # Soft, vibrant blue for links (not too bright, just enough to stand out)
 hover-col: "#3A83B5" # Darker blue for hover effect, maintaining sleekness
 
 # Navbar Colors 

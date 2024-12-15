@@ -58,7 +58,8 @@ layout: base
     background-color: #1D1F21; /* Change background color */
     color: #E0E0E0; /* Text color */
     padding: 20px; /* Adds padding inside the menu */
-    border-right: 2px solid #0073b1; /* Adds a right border */
+    /* Removed blue border */
+    border-right: 0; /* Removed blue bar entirely */
     box-sizing: border-box; /* Includes padding in width calculation */
   }
 
@@ -95,9 +96,11 @@ layout: base
   main {
     flex: 1; /* Take up remaining space */
     padding: 20px; /* Adds padding around the content */
+    padding-top: 60px; /* Pushes the text below the sticky menu */
     box-sizing: border-box; /* Includes padding in width calculation */
   }
 </style>
+
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
