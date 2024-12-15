@@ -10,7 +10,7 @@ Yeehaw! We are ADAholiks, a group of master students from various backgrounds!
 
 To introduce ourselves:
 
-- **Clay**: Digital Humanities 
+- **[Clay](https://github.com/ccpfoye)**: Digital Humanities 
 - **Finn**: SV with a minor in Data Science  
 - **Fletcher**: Civil Engineering with a minor in Data Science  
 - **Karl**: Materials Science with a minor in Computational  Science 
