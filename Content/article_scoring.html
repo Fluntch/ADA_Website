@@ -1,0 +1,34 @@
+<p>-------------------> HERE IS A DRAFT FOR FINN TO LOOK AT would be a bit less heavy if we could put some illustrations?</p>
+
+
+<p>Now, partner, it’s time to score these trusty steeds and determine which ones guide our cowboys through the rugged trails. Here's how we measure the “goodness” of articles:</p>
+
+<h3><b>Prioritizing Scores Based on Minimal Clicks</b></h3>
+
+<p><b>1. Path Score</b>: Measures how closely the cowboy's path matches the shortest route. A score of 1 means the most efficient route.</p>
+<p><i>Formula:</i> <b>Path Score</b> = Optimal Distance / Simplified Path Length</p>
+
+<p><b>2. Article Scoring Based on Path Weights</b></h4>
+<p>There are two ways to calculate article scores based on path weights:</p>
+<ul>
+    <li><b>Weighted Average</b>: Average path weights for each article.</li>
+    <li><b>Sum of Centered Weights</b>: Compute the mean article weight and sum the centered weights for each article.</li>
+</ul>
+
+<h3><b>Scores Based on Detours</b></h3>
+<p><b>3. Detour Ratio</b>: Compares the number of detours an article causes to its total appearances. Lower ratios are better.</p>
+<p><i>Formula:</i> <b>Detour Ratio</b> = Detour Count / Total Appearances</p>
+
+<h3><b>Scores Based on Unfinished Paths</b></h3>
+<p><b>4. Unfinished Ratio</b>: Measures how often an article appears in incomplete paths. Higher ratios suggest failure.</p>
+<p><i>Formula:</i> <b>Unfinished Ratio</b> = Unfinished Count / Total Appearances</p>
+
+<h3><b>Scores for Faster Completion</b></h3>
+
+<p><b>5. Weighted Average of Article Speed</b>: Calculates the average speed for articles based on the time per path length. Faster paths score higher.</p>
+<p><i>Formula:</i> <b>Article Speed</b> = Sum of Path Speeds / Number of Paths</p>
+
+<p><b>6. Sum of Centered Article Speed</b>: Measures how articles contribute to faster paths, centered by mean path speed.</p>
+<p><i>Formula:</i> <b>Centered Speed</b> = Path Speed - Mean Path Speed</p>
+
+<p><b>Note:</b> Scaling is applied so that higher values always indicate better performance, even if lower ratios are preferred in certain metrics.</p>
