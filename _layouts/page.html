@@ -10,11 +10,11 @@ layout: base
     <ul>
       <li><a href="#Introduction">Introduction</a></li>
       <li><a href="#Article-Data-Presentation">Article Data Presentation</a></li>
-      <ul class = "dropdown">
-        <li><a href ="Categories">Categories</a></li>
-        <li><a href="Links">Links</a></li>
-        <li><a href="Hyperlinks">Hyperlinks</a></li>
-        <li><a href="Semantic-Distances">Semantic Distances</a></li>
+      <ul class="subsections" data-section="Article-Data-Presentation">
+        <li><a href="#Categories">Categories</a></li>
+        <li><a href="#Links">Links</a></li>
+        <li><a href="#Hyperlinks">Hyperlinks</a></li>
+        <li><a href="#Semantic-Distances">Semantic Distances</a></li>
       </ul>
       <li><a href="#Played-Paths-Data-Insight">Played Paths Data Insight</a></li>
       <li><a href="Article-Scoring-and-Ranking">Article Scoring and Ranking</a></li>
@@ -74,7 +74,7 @@ layout: base
   .table-of-contents {
     width: 250px; /* Fixed width for the menu */
     position: sticky; /* Enables sticky positioning */
-    top: 50px; /* changer à 50 à la rigeur non? */
+    top: 50px; /* Adjusts distance from the top */
     height: 100vh; /* Full height of the viewport */
     overflow-y: auto; /* Allow scrolling if content exceeds height */
     z-index: 1000; /* Ensure it stays above other content */
@@ -82,12 +82,19 @@ layout: base
     color: #E0E0E0; /* Light gray text */
     padding: 20px; /* Adds padding around the menu */
     box-sizing: border-box; /* Includes padding in the width/height */
+
+    /* Remove borders on top, bottom, and left */
     border-top: none;
     border-bottom: none;
-    border-left: none; /* Left border */
-    border-right: 1px solid #1D1F21; /* Right border */
-    box-shadow: 2px 0 5px #E0E0E0; /* Right shadow */
-  }
+    border-left: none;
+
+    /* Keep a clean right border */
+    border-right: 1px solid #1D1F21;
+
+    /* Add shadow only on the right side */
+    box-shadow: 2px 0 5px rgba(224, 224, 224, 0.5); /* Lighter shadow on the right */
+}
+
 
   /* Menu links */
   .table-of-contents ul {
