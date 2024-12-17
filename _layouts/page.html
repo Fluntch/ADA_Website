@@ -4,6 +4,7 @@ layout: base
 
 {% include header.html type="page" %}
 
+{% if page.url == "/" or page.url == "/index.html" %}
 <div class="layout-wrapper">
   <!-- Menu (Left Column) -->
   <nav class="table-of-contents">
@@ -15,6 +16,7 @@ layout: base
       <li><a href="#Correlation">Score and Attribute Correlation</a></li>
     </ul>
   </nav>
+{% endif %}
   
   <!-- Main Content (Right Column) -->
   <main class="{% if page.full-width %} container-fluid {% else %} container-md {% endif %}">
