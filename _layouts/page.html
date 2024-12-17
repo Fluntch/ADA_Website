@@ -142,26 +142,44 @@ layout: base
 .subsections li {
     margin: 5px 0; /* Add spacing between bullets */
   }
+  .subsections {
+  visibility: hidden;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.subsections.visible {
+  visibility: visible;
+  opacity: 1;
+  max-height: 1000px; /* Adjust based on content size */
+}
+
 
 </style>
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const navLinks = document.querySelectorAll(".table-of-contents a");
+    const sections = document.querySelectorAll("section[id]");
+    const subsections = document.querySelectorAll(".subsections"); // Added query selector
 
     // Highlight the current section as the user scrolls
-    const sections = document.querySelectorAll("section[id]");
     window.addEventListener("scroll", () => {
       let currentSection = "";
 
+      // Identify which section is in view
       sections.forEach((section) => {
         const sectionTop = section.offsetTop - 100; // Adjust based on sticky menu height
         const sectionHeight = section.offsetHeight;
+
         if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
           currentSection = section.getAttribute("id");
         }
       });
 
+      // Highlight the appropriate nav link
       navLinks.forEach((link) => {
         link.classList.remove("active");
         if (link.getAttribute("href").includes(currentSection)) {
@@ -169,32 +187,33 @@ layout: base
         }
       });
 
-      // Show subsections dynamically based on current section
-      const subsections = document.querySelectorAll(".subsections");
+      // Show or hide subsections dynamically based on the current section
       subsections.forEach((subsection) => {
         if (subsection.dataset.section === currentSection) {
-          subsection.style.display = "block"; // Show active subsections
+          subsection.classList.add("visible");
+          subsection.classList.remove("hidden");
         } else {
-          subsection.style.display = "block"; // Hide inactive subsections
+          subsection.classList.add("hidden");
+          subsection.classList.remove("visible");
         }
       });
     });
 
     // Smooth scrolling on menu clicks
-    navLinks.forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
+    navLinks.forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
         e.preventDefault();
 
-        const targetId = this.getAttribute('href').slice(1);
+        const targetId = this.getAttribute("href").slice(1);
         const targetSection = document.getElementById(targetId);
 
-        targetSection.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
+        if (targetSection) {
+          targetSection.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
       });
     });
   });
 </script>
-
-
