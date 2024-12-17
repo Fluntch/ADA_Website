@@ -5,38 +5,40 @@ subtitle: Let’s dive into the good, the bad, and the downright ugly attributes
 cover-img: /assets/img/GBU.jpg
 ---
 
-<p>Enter the wild and thrilling frontier of Wikispeedia, where navigating Wikipedia articles isn’t just a game – it’s a high-stakes showdown of strategy, navigation, and wits.</p>
+<section id="Introduction">
+    <h2> Introduction </h2>
+    <p>Enter the wild and thrilling frontier of Wikispeedia, where navigating Wikipedia articles isn’t just a game – it’s a high-stakes showdown of strategy, navigation, and wits.</p>
+    <p>What makes some articles the trusty steed that carries you to victory? Why do others lead you astray, wandering like a lone ranger in the desert?</p>
+    <p>Here, we saddle up to decode the secrets of the trailblazing articles. Through data-driven insights, we’ll uncover how these key topics guide players through this untamed maze of hyperlinks.</p>
+    <p>So, partner, ready to ride into the unknown? Let’s hit the dusty trail and unravel the mystery together!</p>
 
-<p>What makes some articles the trusty steed that carries you to victory? Why do others lead you astray, wandering like a lone ranger in the desert?</p>
-
-<p>Here, we saddle up to decode the secrets of the trailblazing articles. Through data-driven insights, we’ll uncover how these key topics guide players through this untamed maze of hyperlinks.</p>
-
-<p>So, partner, ready to ride into the unknown? Let’s hit the dusty trail and unravel the mystery together!</p>
+</section>
 
 
-<h1>Exploring the Data Frontier :</h1>
+<section id="Article-Data-Presentation">
+    <h2>Exploring the data frontier: A peek into article data</h2>
+    <p>Articles are the steady horses that carry players to victory, guiding them through the winding trails of hyperlinks. Here’s what we’ve learned about these horses and their traits:</p>
+    <img src="{{ '/assets/img/article.jpg' | relative_url }}" alt="Descriptive Alt Text" style="display: block; margin-bottom: 20px; width: 100%; max-width: 10000px;">
+    {% include_relative Content/article_data.html %}
+</section>
 
-<h2>Article Data Insights</h2>
+<section id="Played-Paths-Data-Insight">
+    <h2> Meet our cowboys: an insight into played paths</h2>
+    <p>Some paths are quick trails to victory, while others are just false leads or dead ends in the wild west of Wikispeedia.</p>
+    <img src="{{ '/assets/img/paths.jpg' | relative_url }}" alt="Descriptive Alt Text" style="display: block; margin-bottom: 20px; width: 100%; max-width: 10000px;">
+    {% include_relative Content/path_data.html %}
+</section>
 
-<p>Articles are the steady horses that carry players to victory, guiding them through the winding trails of hyperlinks. Here’s what we’ve learned about these horses and their traits:</p>
+<section id="Article-Scoring-and-Ranking">
+    <h2>Article Scoring: Ranking the Steeds</h2>
+    {% include_relative Content/article_scoring.html %}
+</section>
 
-<img src="{{ '/assets/img/article.jpg' | relative_url }}" alt="Descriptive Alt Text" style="display: block; margin: 0 auto 20px; width: 100%; max-width: 10000px;">
+<section id="Correlation">
+    <h2> Does it work? An analysis of attribute and score correlation</h2>
+    {% include_relative Content/article_score_attribute_corr.html %}
+</section>
 
-{% include_relative Content/article_data.html %}
-
-<h2>Played Paths Data Insights</h2>
-
-<p>Some paths are quick trails to victory, while others are just false leads or dead ends in the wild west of Wikispeedia.</p>
-
-<img src="{{ '/assets/img/paths.jpg' | relative_url }}" alt="Descriptive Alt Text" style="display: block; margin: 0 auto 20px; width: 100%; max-width: 10000px;">
-
-{% include_relative Content/path_data.html %}
-
-<h1><b>Article Scoring: Ranking the Steeds</b></h1>
     
-{% include_relative Content/article_scoring.html %}
-
-
-
 
 

@@ -4,28 +4,152 @@ layout: base
 
 {% include header.html type="page" %}
 
-<main class="{% if page.full-width %} container-fluid {% else %} container-md {% endif %}">
-  <div class="row">
-    <div class="{% if page.full-width %} col {% else %} col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 {% endif %}">
-      {% if page.before-content %}
-        <div class="before-content">
-          {% for file in page.before-content %}
-            {% include {{ file }} %}
-          {% endfor %}
-        </div>
-      {% endif %}
+<div class="layout-wrapper">
+  <!-- Menu (Left Column) -->
+  <nav class="table-of-contents">
+    <ul>
+      <li><a href="#Introduction">Introduction</a></li>
+      <li><a href="#Article-Data-Presentation">Article Data Presentation</a></li>
+      <li><a href="#Played-Paths-Data-Insight">Played Paths Data Insight</a></li>
+      <li><a href="#Article-Scoring-and-Ranking">Article Scoring and Ranking</a></li>
+      <li><a href="#Correlation">Score and Attribute Correlation</a></li>
+    </ul>
+  </nav>
+  
+  <!-- Main Content (Right Column) -->
+  <main class="{% if page.full-width %} container-fluid {% else %} container-md {% endif %}">
+    <div class="row">
+      <div class="{% if page.full-width %} col {% else %} col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 {% endif %}">
+        {% if page.before-content %}
+          <div class="before-content">
+            {% for file in page.before-content %}
+              {% include {{ file }} %}
+            {% endfor %}
+          </div>
+        {% endif %}
 
-      {{ content }}
+        {{ content }}
 
-      {% if page.after-content %}
-        <div class="after-content">
-          {% for file in page.after-content %}
-            {% include {{ file }} %}
-          {% endfor %}
-        </div>
-      {% endif %}
+        {% if page.after-content %}
+          <div class="after-content">
+            {% for file in page.after-content %}
+              {% include {{ file }} %}
+            {% endfor %}
+          </div>
+        {% endif %}
 
-      {% include comments.html %}
+        {% include comments.html %}
+      </div>
     </div>
-  </div>
-</main>
+  </main>
+</div>
+
+<style>
+  /* General body styling */
+body {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  min-height: 100vh; /* Full viewport height */
+  margin: 0; /* Remove default margins */
+}
+
+/* Layout wrapper for menu and main content */
+.layout-wrapper {
+  display: flex; /* Horizontal layout */
+  justify-content: center; /* Center content horizontally */
+  align-items: flex-start; /* Align content at the top */
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Sticky Table of Contents */
+.table-of-contents {
+  width: 250px;
+  position: sticky;
+  top: 50px;
+  height: 100vh;
+  overflow-y: auto;
+  z-index: 1000;
+  background-color: #1D1F21;
+  color: #E0E0E0;
+  padding: 20px;
+  box-sizing: border-box;
+  border-right: 1px solid #E0E0E0;
+}
+
+/* Menu links styling */
+.table-of-contents ul {
+  list-style-type: none; /* Remove bullet points for main list */
+  padding: 0;
+  margin: 0;
+}
+
+.table-of-contents li {
+  margin: 10px 0; /* Space between links */
+}
+
+.table-of-contents a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #E0E0E0;
+  transition: color 0.3s ease;
+}
+
+.table-of-contents a:hover,
+.table-of-contents a.active {
+  text-decoration: none ;
+  color: #8c8e90; /* Highlight on hover and active */
+}
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const navLinks = document.querySelectorAll(".table-of-contents a");
+
+    // Highlight the current section as the user scrolls
+    const sections = document.querySelectorAll("section[id]");
+    window.addEventListener("scroll", () => {
+      let currentSection = "";
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop - 100; // Adjust based on sticky menu height
+        const sectionHeight = section.offsetHeight;
+        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+          currentSection = section.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach((link) => {
+        link.classList.remove("active");
+        if (link.getAttribute("href").includes(currentSection)) {
+          link.classList.add("active");
+        }
+      });
+
+      // Show subsections dynamically based on current section
+      const subsections = document.querySelectorAll(".subsections");
+      subsections.forEach((subsection) => {
+        if (subsection.dataset.section === currentSection) {
+          subsection.style.display = "block"; // Show active subsections
+        } else {
+          subsection.style.display = "none"; // Hide inactive subsections
+        }
+      });
+    });
+
+    // Smooth scrolling on menu clicks
+    navLinks.forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute('href').slice(1);
+        const targetSection = document.getElementById(targetId);
+
+        targetSection.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      });
+    });
+  });
+</script>
