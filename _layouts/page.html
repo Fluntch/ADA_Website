@@ -61,10 +61,14 @@ layout: base
 
   /* Layout wrapper for menu and main content */
   .layout-wrapper {
-    display: flex; /* Side-by-side layout */
-    flex: 1; /* Ensures it takes all available space between header and footer */
-    flex-direction: row; /* Menu on the left, content on the right */
+  display: flex; /* Creates a horizontal layout */
+  flex-direction: row; /* Align children side by side */
+  justify-content: center; /* Centers the content horizontally */
+  align-items: flex-start; /* Align content at the top */
+  width: 100%;
+  margin: 0 auto; /* Ensures the layout is centered horizontally */
   }
+
 
   /* Sticky Menu */
   .table-of-contents {
@@ -80,7 +84,10 @@ layout: base
     box-sizing: border-box; /* Includes padding in the width/height */
     border-right: none; /* Removes blue line */
   }
-
+  .table-of-contents {
+    box-shadow: 0 2px 5px #E0E0E0;
+    border-right: 1px solid #1D1F21;
+  } 
   /* Menu links */
   .table-of-contents ul {
     list-style-type: none; /* Remove bullet points */
@@ -116,6 +123,7 @@ layout: base
     padding: 20px; /* Adds padding around the content */
     padding-top: 20px; /* Pushes the text below the sticky menu */
     box-sizing: border-box; /* Includes padding in width calculation */
+    text-align: justify;
   }
 
 </style>
