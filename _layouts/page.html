@@ -49,121 +49,97 @@ layout: base
   </main>
 </div>
 
-
 <style>
   /* Ensure the body spans the full height of the viewport */
-  body {
-    display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    min-height: 100vh; /* Ensure body height matches the viewport */
-    margin: 0; /* Remove default body margins */
-  }
+body {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  min-height: 100vh; /* Ensure body height matches the viewport */
+  margin: 0; /* Remove default body margins */
+}
 
-  /* Layout wrapper for menu and main content */
-  .layout-wrapper {
+/* Layout wrapper for menu and main content */
+.layout-wrapper {
   display: flex; /* Creates a horizontal layout */
   flex-direction: row; /* Align children side by side */
   justify-content: center; /* Centers the content horizontally */
   align-items: flex-start; /* Align content at the top */
   width: 100%;
   margin: 0 auto; /* Ensures the layout is centered horizontally */
-  }
-
-
-  /* Sticky Menu */
-  .table-of-contents {
-    width: 250px; /* Fixed width for the menu */
-    position: sticky; /* Enables sticky positioning */
-    top: 50px; /* Adjusts distance from the top */
-    height: 100vh; /* Full height of the viewport */
-    overflow-y: auto; /* Allow scrolling if content exceeds height */
-    z-index: 1000; /* Ensure it stays above other content */
-    background-color: #1D1F21; /* Dark gray background */
-    color: #E0E0E0; /* Light gray text */
-    padding: 20px; /* Adds padding around the menu */
-    box-sizing: border-box; /* Includes padding in the width/height */
-
-    /* Remove borders on top, bottom, and left */
-    border-top: none;
-    border-bottom: none;
-    border-left: none;
-
-    /* Keep a clean right border */
-    border-right: 1px solid #E0E0E0;
-
-    /* Add shadow only on the right side */
-
 }
 
+/* Sticky Menu */
+.table-of-contents {
+  width: 250px; /* Fixed width for the menu */
+  position: sticky; /* Enables sticky positioning */
+  top: 50px; /* Adjusts distance from the top */
+  height: 100vh; /* Full height of the viewport */
+  overflow-y: auto; /* Allow scrolling if content exceeds height */
+  z-index: 1000; /* Ensure it stays above other content */
+  background-color: #1D1F21; /* Dark gray background */
+  color: #E0E0E0; /* Light gray text */
+  padding: 20px; /* Adds padding around the menu */
+  box-sizing: border-box; /* Includes padding in the width/height */
+  border-right: 1px solid #E0E0E0; /* Clean right border */
+}
 
-  /* Menu links */
-  .table-of-contents ul {
-    list-style-type: none; /* Remove bullet points */
-    padding: 0;
-    margin: 0;
-  }
+/* Menu links */
+.table-of-contents ul {
+  list-style-type: none; /* Remove bullet points */
+  padding: 0;
+  margin: 0;
+}
 
-  .table-of-contents li {
-    margin: 10px 0; /* Adds spacing between links */
-  }
+.table-of-contents li {
+  margin: 10px 0; /* Adds spacing between links */
+}
 
-  .table-of-contents a {
-    text-decoration: none; /* Remove underline */
-    font-weight: bold;
-    color: #E0E0E0; /* Matches light gray text */
-    transition: color 0.3s; /* Smooth transition for hover and active states */
-  }
+.table-of-contents a {
+  text-decoration: none; /* Remove underline */
+  font-weight: bold;
+  color: #E0E0E0; /* Matches light gray text */
+  transition: color 0.3s; /* Smooth transition for hover and active states */
+}
 
-  .table-of-contents a:hover {
-    text-decoration: underline;
-    color: #0073b1; /* Highlight with blue on hover */
-  }
+.table-of-contents a:hover {
+  text-decoration: underline;
+  color: #0073b1; /* Highlight with blue on hover */
+}
 
-  .table-of-contents a.active {
-    color: #0073b1; /* Active link color */
-    font-weight: bold;
-    text-decoration: underline;
-  }
+.table-of-contents a.active {
+  color: #0073b1; /* Active link color */
+  font-weight: bold;
+  text-decoration: underline;
+}
 
-  /* Main content area */
-  main {
-    flex: 1; /* Take up remaining space */
-    padding: 20px; /* Adds padding around the content */
-    padding-top: 20px; /* Pushes the text below the sticky menu */
-    box-sizing: border-box; /* Includes padding in width calculation */
-    text-align: justify;
-  }
-  .subsections {
-    display: none; /* Hide subsections by default */
-    list-style-type: disc; /* Display as bullet points */
-    margin-left: 30px; /* Indent bullet points */
-  } 
+/* Subsections */
+.subsections {
+  display: none; /* Hide subsections by default */
+  list-style-type: disc; /* Display as bullet points */
+  margin-left: 30px; /* Indent bullet points */
+}
 
 .subsections li {
-    margin: 5px 0; /* Add spacing between bullets */
-  }
-  .subsections {
-  visibility: hidden;
-  opacity: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: all 0.3s ease;
+  margin: 5px 0; /* Add spacing between bullets */
 }
 
-.subsections.visible {
-  visibility: visible;
-  opacity: 1;
-  max-height: 1000px; /* Adjust based on content size */
+/* Main content area */
+main {
+  flex: 1; /* Take up remaining space */
+  padding: 20px; /* Adds padding around the content */
+  padding-top: 20px; /* Pushes the text below the sticky menu */
+  box-sizing: border-box; /* Includes padding in width calculation */
+  text-align: justify;
 }
-
-
 </style>
+
+
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const navLinks = document.querySelectorAll(".table-of-contents a");
     const sections = document.querySelectorAll("section[id]");
-    const subsections = document.querySelectorAll(".subsections"); // Added query selector
+    const subsections = document.querySelectorAll(".subsections");
 
     // Highlight the current section as the user scrolls
     window.addEventListener("scroll", () => {
@@ -171,10 +147,10 @@ layout: base
 
       // Identify which section is in view
       sections.forEach((section) => {
-        const sectionTop = section.offsetTop - 100; // Adjust based on sticky menu height
+        const sectionTop = section.offsetTop - 100; // Adjust for sticky menu height
         const sectionHeight = section.offsetHeight;
 
-        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+        if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
           currentSection = section.getAttribute("id");
         }
       });
@@ -190,11 +166,9 @@ layout: base
       // Show or hide subsections dynamically based on the current section
       subsections.forEach((subsection) => {
         if (subsection.dataset.section === currentSection) {
-          subsection.classList.add("visible");
-          subsection.classList.remove("hidden");
+          subsection.style.display = "block"; // Show the subsections
         } else {
-          subsection.classList.add("hidden");
-          subsection.classList.remove("visible");
+          subsection.style.display = "none"; // Hide the subsections
         }
       });
     });
