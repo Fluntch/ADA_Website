@@ -89,10 +89,10 @@ layout: base
     border-left: none;
 
     /* Keep a clean right border */
-    border-right: 1px solid #1D1F21;
+    border-right: 1px solid #E0E0E0;
 
     /* Add shadow only on the right side */
-    box-shadow: 2px 0 5px rgba(224, 224, 224, 0.5); /* Lighter shadow on the right */
+
 }
 
 
@@ -136,7 +136,7 @@ layout: base
   .subsections {
     display: none; /* Hide subsections by default */
     list-style-type: disc; /* Display as bullet points */
-    margin-left: 20px; /* Indent bullet points */
+    margin-left: 30px; /* Indent bullet points */
   } 
 
 .subsections li {
@@ -175,7 +175,7 @@ layout: base
         if (subsection.dataset.section === currentSection) {
           subsection.style.display = "block"; // Show active subsections
         } else {
-          subsection.style.display = "none"; // Hide inactive subsections
+          subsection.style.display = "block"; // Hide inactive subsections
         }
       });
     });
