@@ -82,12 +82,14 @@ layout: base
     color: #E0E0E0; /* Light gray text */
     padding: 20px; /* Adds padding around the menu */
     box-sizing: border-box; /* Includes padding in the width/height */
-    border-right: none; /* Removes blue line */
+    /* Add borders only to the sides */
+    border-top: none;
+    border-bottom: none;
+    border-left: none; /* Left border */
+    border-right: 1px solid #1D1F21; /* Right border */
+    box-shadow: 2px 0 5px #E0E0E0; /* Right shadow */
   }
-  .table-of-contents {
-    box-shadow: 0 2px 5px #E0E0E0;
-    border-right: 1px solid #1D1F21;
-  } 
+
   /* Menu links */
   .table-of-contents ul {
     list-style-type: none; /* Remove bullet points */
@@ -125,6 +127,15 @@ layout: base
     box-sizing: border-box; /* Includes padding in width calculation */
     text-align: justify;
   }
+  .subsections {
+    display: none; /* Hide subsections by default */
+    list-style-type: disc; /* Display as bullet points */
+    margin-left: 20px; /* Indent bullet points */
+  } 
+
+.subsections li {
+    margin: 5px 0; /* Add spacing between bullets */
+  }
 
 </style>
 
@@ -151,6 +162,16 @@ layout: base
           link.classList.add("active");
         }
       });
+
+      // Show subsections dynamically based on current section
+      const subsections = document.querySelectorAll(".subsections");
+      subsections.forEach((subsection) => {
+        if (subsection.dataset.section === currentSection) {
+          subsection.style.display = "block"; // Show active subsections
+        } else {
+          subsection.style.display = "none"; // Hide inactive subsections
+        }
+      });
     });
 
     // Smooth scrolling on menu clicks
@@ -169,3 +190,5 @@ layout: base
     });
   });
 </script>
+
+
