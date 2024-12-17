@@ -102,62 +102,28 @@ body {
 
 .table-of-contents a:hover,
 .table-of-contents a.active {
-  text-decoration: underline;
-  color: #0073b1; /* Highlight on hover and active */
-}
-
-/* Subsections styling */
-.subsections {
-  display: none; /* Hide subsections by default */
-  list-style-type: disc; /* Bullet points for subsections */
-  margin-left: 20px; /* Indent bullet points */
-}
-
-.subsections li {
-  margin: 5px 0; /* Spacing between bullets */
-}
-
-.subsections.visible {
-  display: block; /* Show subsections when active */
+  text-decoration: none ;
+  color: #8c8e90; /* Highlight on hover and active */
 }
 </style>
-
-
-
-
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const navLinks = document.querySelectorAll(".table-of-contents a");
+
+    // Highlight the current section as the user scrolls
     const sections = document.querySelectorAll("section[id]");
-    const subsections = document.querySelectorAll(".subsections");
-
-    // Function to toggle subsections visibility
-    function toggleSubsections(currentSection) {
-      subsections.forEach((subsection) => {
-        if (subsection.dataset.section === currentSection) {
-          subsection.classList.add("visible"); // Show active subsections
-        } else {
-          subsection.classList.remove("visible"); // Hide others
-        }
-      });
-    }
-
-    // Scroll event listener to highlight active section
     window.addEventListener("scroll", () => {
       let currentSection = "";
 
-      // Determine current section in view
       sections.forEach((section) => {
-        const sectionTop = section.offsetTop - 100; // Adjust based on sticky menu
+        const sectionTop = section.offsetTop - 100; // Adjust based on sticky menu height
         const sectionHeight = section.offsetHeight;
-
-        if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
           currentSection = section.getAttribute("id");
         }
       });
 
-      // Highlight active link in the Table of Contents
       navLinks.forEach((link) => {
         link.classList.remove("active");
         if (link.getAttribute("href").includes(currentSection)) {
@@ -165,24 +131,29 @@ body {
         }
       });
 
-      // Show or hide subsections
-      toggleSubsections(currentSection);
+      // Show subsections dynamically based on current section
+      const subsections = document.querySelectorAll(".subsections");
+      subsections.forEach((subsection) => {
+        if (subsection.dataset.section === currentSection) {
+          subsection.style.display = "block"; // Show active subsections
+        } else {
+          subsection.style.display = "none"; // Hide inactive subsections
+        }
+      });
     });
 
-    // Smooth scrolling for menu clicks
-    navLinks.forEach((anchor) => {
-      anchor.addEventListener("click", function (e) {
+    // Smooth scrolling on menu clicks
+    navLinks.forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
         e.preventDefault();
 
-        const targetId = this.getAttribute("href").slice(1);
+        const targetId = this.getAttribute('href').slice(1);
         const targetSection = document.getElementById(targetId);
 
-        if (targetSection) {
-          targetSection.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-          });
-        }
+        targetSection.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
       });
     });
   });
