@@ -1,5 +1,9 @@
 <h3><b>Graph theory based ranking</b></h3>
 
+<p>When analyzing the network of articles, graph theory offers a powerful tool for identifying those that play a central role in navigation. 
+    Using a graph theory-based metric, we evaluate an article’s importance by examining how often it appears in the shortest paths connecting all possible source and target pairs. 
+    To ensure fairness, we normalize these counts by the total number of shortest paths for each pair, preventing any bias toward articles that dominate only specific routes.</p>
+
 <p>However, graph theory alone doesn’t capture the full picture. To understand what players perceive as valuable articles, we turn to the actual played path data. 
 The metrics we’ve introduced focus on what players themselves believe to be “good” articles—derived directly from their navigational choices and the strategies they employ.</p> 
 
