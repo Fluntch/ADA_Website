@@ -1,4 +1,12 @@
-<h4><b>Correlation analysis based on the played paths data :</b></h4>
+<h4><b>Correlation analysis based on the played paths data.</b></h4>
+
+<p>Before diving into the correlations, let’s first clarify the more nuanced attributes we consider:</p>
+<ul>
+    <li><b>Average Max Cosine Distance:</b> This metric calculates the average of the top 3 largest cosine distances between the article title embedding and the directly linked article title embeddings. It’s designed to capture the potential for large semantic jumps, which could indicate shorter, more efficient paths between articles.</li>
+    <li><b>Average Min Cosine Distance:</b> The inverse of the above, this metric focuses on the smallest cosine distances, helping identify articles that are semantically close to others, potentially indicating a more direct or connected route.</li>
+    <li><b>PageRank:</b> A graph theory-based metric that assesses the importance of an article (node) within the network. It evaluates how well-connected an article is, giving higher scores to those linked to other highly-ranked articles. PageRank reflects an article’s influence and centrality in the overall network.</li>
+    <li><b>Betweenness Centrality:</b> Another graph theory metric that measures how often an article (node) acts as a bridge along the shortest path between two other articles. Higher betweenness centrality indicates an article’s role in connecting different parts of the network, making it a key node for navigation.</li>
+</ul>
 
 <div class="flourish-embed flourish-chart" data-src="visualisation/20891399" style="width: 80%; height: auto; margin: 0 auto; display: block;">
     <script src="https://public.flourish.studio/resources/embed.js"></script>
