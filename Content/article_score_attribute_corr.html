@@ -35,7 +35,7 @@
 </pre>
 
 <p>
-    Using this algorithm, we can play any Wikispeedia path we want! In order to make comparing the correlation of our attributes to our prospective metrics, we will use this algorithm to play the same filtered paths as before. After playing those paths, we can compute corresponding utility and quality scores for the articles in our bot-generated paths. Note that the utility and quality in this case are just the sum of centered weights and average weight scores, as detailed above. Time and composite scores are not relevant in this case.
+    Using this algorithm, we can play any Wikispeedia path we want! In order to make comparing the correlation of our attributes to our prospective metrics, we will use this algorithm to play the same filtered paths as before. After playing those paths, we can compute corresponding utility and quality scores for the articles in our bot-generated paths. Before computing these scores, we filter our bot-generated paths in the same way we filtered the player-made paths: downsampling and IQR filtering. Note that the utility and quality in this case are just the sum of centered weights and average weight scores, as detailed above. Time and composite scores are not relevant in this case.
 </p>
 
 <div class="flourish-embed flourish-chart" data-src="visualisation/20891941" style="width: 80%; height: auto; margin: 0 auto; display: block;">
@@ -50,6 +50,17 @@
 
 
 <p>
+    Yee-Haw! Looks like this quick-draw way of playing is a much better fit for our attributes! The graph-based attributes especially correlate with our scores generated on these types of paths. One possible interpretation of this change in the correlation data is that specifying a strategy for the Wikispeedia game results in more consistent data.
+    That is to say, the player-made paths (even our filtered version) are made up of many different players each playing in their own way with their own strategies. Our increased correlation after generating paths for just <i>one</i> strategy supports this understanding of the dataset.
+</p>
 
+<p>
+    At the same time, the implication that article-specific attributes are more relevant only when a single player archetype plays the game implies that no such thing as an universally good article exists.
+    One might think of a "good" article in terms of a specific path: the idea that you can only evaluate an article given a goal. However, this increase in correlation reveals there is something else that makes a "good" article: the player.
+    What a player would consider good about an article differs from player to player. If a player prefers to take their time and read through all of the different out-links, then link density is best. If a player is not necessarily playing to win but rather explore Wikipedia, then the number of characters is a desirable attribute. After all, Wikispeedia is a <i>game,</i> and people play games to have fun. What one person considers to be "fun" may be entirely different from another person. 
+</p>
+
+<p>
+    At the end of the day: there are no "good" or "bad" (or even "ugly") horses: just cowboys riding the trail together.
 </p>
 
