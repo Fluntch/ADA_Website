@@ -8,10 +8,13 @@
     <li><b>Betweenness Centrality:</b> Another graph theory metric that measures how often an article (node) acts as a bridge along the shortest path between two other articles. Higher betweenness centrality indicates an article’s role in connecting different parts of the network, making it a key node for navigation.</li>
 </ul>
 
-<p>The first plot below shows the correlation between our 2 composite scores prioritizing minimal number of click, while the second show those for the time based scores.
-Overall the patterns between the two click and time scores are quite similar. The composite click score reflecting article quality and average time score show quite low correlations overall while the composite
-    utility score and the sum of adjusted time scores show higer correlations for all graph based attributes while the text based attributes still have pretty low correlations overall.
- </p>
+<p>
+    The two plots below show the correlation of our article attributes with our two composite scores. The first plot shows scores that emphasize a minimal number of clicks, whicle the second shows scores that emphasize a short path completion time.
+    None of the attributes based on in-article features correlated heavily with either of our two scores. However, graph-based attributes correlated well with utility across both composite scores.
+    The failure of in-article attributes to correlate with our article metrics implies that there is no such thing as a "good" article, as derived from its textual attributes. Instead, the only features of a given article which we can make generalizable statements on are those removed from the text itself: the graph attributes.
+    
+    This begs the question: what is to blame: our attributes or the dataset? In order to get a firmer understanding of our attributes' shortcomings, we decided to create our own dataset of traversed paths.
+</p>
 
 <div class="flourish-embed flourish-chart" data-src="visualisation/20891399" style="width: 80%; height: auto; margin: 0 auto; display: block;">
     <script src="https://public.flourish.studio/resources/embed.js"></script>
