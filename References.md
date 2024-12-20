@@ -1,7 +1,7 @@
 ---
 layout: page
-title: 
-subtitle: "Thanks to the creators and contributors"
+title: "Thanks to the creators and contributors"
+subtitle: 
 ---
 
 ## Here are the links to the images we used:
