@@ -11,29 +11,32 @@ This points to how geopolitical, regional, and historical themes are the backbon
 
 <h3><b>Played path based scoring</b></h3>
 
-<p>However, graph theory alone doesn’t capture the full picture. To understand what players perceive as valuable articles, we turn to the actual played path data. 
-The metrics we’ve introduced focus on what players themselves believe to be “good” articles, derived directly from their navigational choices and the strategies they employ.</p> 
+<p>Graph theory alone doesn’t capture the full picture. To understand which articles are most valuable in carrying cowboys to their targets, we analyze the trails they actually ride on; the played paths.
+    The metrics we introduce reflect what articles tend to lead players most effectively to their destination, derived directly from their navigational choices and the strategies they employ.</p> 
 
-<h3><b>Prioritizing Scores Based on Minimal Clicks</b></h3>
+<p>Wikispeedia challenges cowboys with a dual objective: to reach the target as quickly as possible or to do so while taking the shortest route. While shorter trails are often faster, that’s not always the case. Sometimes, 
+    a longer trail across familiar terrain—articles more widely known among players—can lead to quicker success. To capture these dynamics, we separately calculate scores that reward both minimal path length (fewer clicks) and minimal path duration (faster navigation).</p> 
 
-<p><b>1. Path Score</b>: Measures how closely the cowboy's path matches the shortest route. A score of 1 means the most efficient route.</p>
-<p><i>Formula:</i> <b>Path Score</b> = Optimal Distance / Simplified Path Length</p>
+<h6><b>Scores Based on Minimal Clicks</b></h3>
+<p><b>Path weights</b> are our first metric for determining trail efficiency. These weights measure how closely a cowboy’s chosen trail matches the shortest possible path by calculating the ratio of the optimal distance to the simplified trail length. 
+    The closer a weight is to one the more efficient a path is. From these path scores, we derive two types of article scores:</p>
 
-<p><b>2. Article Scoring Based on Path Weights</b></h4>
-<p>There are two ways to calculate article scores based on path weights:</p>
 <ul>
-    <li><b>Weighted Average</b>: Average path weights for each article.</li>
+    <li><b>Average of the Weights</b>: The average path weight for each article.</li>
     <li><b>Sum of Centered Weights</b>: Compute the mean article weight and sum the centered weights for each article.</li>
 </ul>
 
-<h3><b>Scores Based on Detours</b></h3>
-<p><b>3. Detour Ratio</b>: Compares the number of detours an article causes to its total appearances. Lower ratios are better.</p>
-<p><i>Formula:</i> <b>Detour Ratio</b> = Detour Count / Total Appearances</p>
+<p>One might think that these two scores should basically be the same, however, this is not the case. The distinction is important: articles with the highest average weights are those that reliably appear in near-optimal paths, 
+    representing article quality. On the other hand, articles with the highest sum of centered weights can just have above average weights, but appear a lot more frequently, reflecting article utility.<\p>
 
-<h3><b>Scores Based on Unfinished Paths</b></h3>
-<p><b>4. Unfinished Ratio</b>: Measures how often an article appears in incomplete paths. Higher ratios suggest failure.</p>
-<p><i>Formula:</i> <b>Unfinished Ratio</b> = Unfinished Count / Total Appearances</p>
+<p>While the weight scores capture efficiency, they don’t tell the whole story. Two additional metrics help us assess how articles affect navigation in other ways. 
+    The <b>Detour Ratio Score</b> measures the proportion of times an article appears in detours—parts of the trail that required backtracking—compared to its total appearances in finished paths. 
+    Additionally, the <b>Unfinished Ratio Score</b> tracks how an article shows up in incomplete paths versus all paths. In both cases, a high score suggests the article might mislead cowboys, nudging them onto less effective paths.<\p>
 
+<p>Finally, we bring it all together with <b>Composite Scores</b> , combining one of the weight-based scores with the detour and unfinished ratio scores. 
+    This weighted sum prioritizes the weight score while giving smaller emphasis to the two ratio scores, providing a sophisticated measure of an article’s performance as a guide on the trails. <\p>
+
+<p> add lists here? <\p>
 <h3><b>Scores for Faster Completion</b></h3>
 
 <p><b>5. Weighted Average of Article Speed</b>: Calculates the average speed for articles based on the time per path length. Faster paths score higher.</p>
