@@ -1,6 +1,6 @@
 ---
 layout: page
-title: References used
+title: 
 subtitle: 
 ---
 
@@ -20,3 +20,6 @@ subtitle:
 ## Final acknowledgement :
 
 We also tip our hats to ChatGPT for helping us wrangle the words and tighten up the text in this here paper, and for lending a hand with translations. However, ChatGPT didn’t play a role in the data analysis or in drawing the conclusions of this study.
+
+
+<iframe src="https://giphy.com/embed/7bumBQjZX8BgaE2zjv" width="480" height="480" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/Grittv-western-movie-conagher-7bumBQjZX8BgaE2zjv">via GIPHY</a></p>
