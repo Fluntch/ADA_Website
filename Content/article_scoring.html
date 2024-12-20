@@ -23,8 +23,8 @@ These geopolitical, regional, and historical themes are therefore proven to be t
     The closer a weight is to 1 the more efficient a path is. From these path scores, we derive two types of article scores:</p>
 
 <ul>
-    <li><b>Average of the Weights</b>: The average path weight for each article.</li>
-    <li><b>Sum of Centered Weights</b>: Computes the mean article weight and sums the centered weights for each article.</li>
+    <li><b>Average of the Weights</b>: Average weight of the paths an article appears in.</li>
+    <li><b>Sum of Centered Weights</b>: This score centers the path weights by substractiion of the mean weight, then sums these centered weights for all paths were theh article appers.</li>
 </ul>
 
 <p>One might think that these two scores should basically be the same, however, this is not the case. The distinction is important: articles with the highest average weights are those that reliably appear in near-optimal paths, 
@@ -52,7 +52,7 @@ These geopolitical, regional, and historical themes are therefore proven to be t
     As before, the distinction between these two scores reflects the balance between quality and utility of an article to the players.</p>
 <ul>
     <li><b>Average of the Adjusted Times</b>: Represents the average adjusted time for each article</li>
-    <li><b>Sum of Centered Adjusted Times</b>: This score subtracts the mean article-adjusted time from the path time, then sums these centered values for all paths where the article appears.</li>
+    <li><b>Sum of Centered Adjusted Times</b>: This score centers the adjusted path times by substration of the mean adjusted path time, then sums these centered values for all paths where the article appears.</li>
 </ul>
 
 <div class="flourish-embed flourish-chart" data-src="visualisation/20890339"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20890339/thumbnail" width="100%" alt="chart visualization" /></noscript></div>
