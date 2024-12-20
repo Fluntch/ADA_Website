@@ -12,9 +12,30 @@
 </div>
 
 
-<h4><b>Correlation analysis based on bot generated paths data :</b></h4>
+<h4><b>Fast Draw: Another Way to Play.</b></h4>
 
-<p>We should make it clear somewhere here that the utily and quality scores are just the sum of centered weights and average weight scores from above. And that in this case it made no sense to compute Composite scores with detour and unfinished ratio. Also that time scores make no sense.</p>
+<p>In the Wild West, it was common that disputes were settled with a battle of reflexes: fast draw. Anecdotally, this is the way that many people play the Wikispeedia game. These players don't pour over articles for outgoing links, and they certainly don't take the time to read different articles. Instead, these players rely on their own assumptions about the structure of the graph. When choosing a next article, they don't necessarily vocalize a strategy of navigating to a larger hub and then incrementally refining their article choice: they simply choose the next article that is most similar to their target article. Our current player-made paths dataset does have a few of these sharpshooters, but they are lost in the noise. What if we could play the Wikispeedia game like these players? Would our attributes correlate any differently on these kinds of paths?
+</p>
+
+<p>
+    The first step is to define our strategy for selecting the next article given a current article and a target article. We could use the categories and their tiers. However, we run into problems if we just use the binary classifications provided to us by the categories. There is no clear way to evaluate distance between different completely category types. Thankfully, due to our embeddings, we already have a numeric representation of semantic distance! This makes our algorithm for playing Wikispeedia much simpler.    
+</p>
+
+
+<pre><code>
+    For each start, end in paths:
+    current_article = start
+    while current_article != end:
+        Out of the possible next articles, choose the article that satisfies the following conditions:
+            1. we have not visited
+            2. has the smallest distance to the end of the path
+        If no articles satisfy this, discard the path.
+</code></pre>
+
+
+<p>
+    Using this algorithm, we can play any Wikispeedia path we want! In order to make comparing the correlation of our attributes to our prospective metrics, we will use this algorithm to play the same filtered paths as before. After playing those paths, we can compute corresponding utility and quality scores for the articles in our bot-generated paths. Note that the utility and quality in this case are just the sum of centered weights and average weight scores, as detailed above. Time and composite scores are not relevant in this case.
+</p>
 
 <div class="flourish-embed flourish-chart" data-src="visualisation/20891941" style="width: 80%; height: auto; margin: 0 auto; display: block;">
     <script src="https://public.flourish.studio/resources/embed.js"></script>
