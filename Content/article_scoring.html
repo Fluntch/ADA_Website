@@ -40,23 +40,24 @@ These geopolitical, regional, and historical themes are therefore proven to be t
 
 <div class="flourish-embed flourish-chart" data-src="visualisation/20890167"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20890167/thumbnail" width="100%" alt="chart visualization" /></noscript></div>
 
-<p>Geography rides tall in the saddle once again, partner. For the utility score, nearly every top-ranking article is tied to geographical themes. From sprawling regions to powerful nations, these landmarks continue to steer cowboys across the vast network.</p> 
-
-<p>On the other hand, the quality score highlights seemingly more random articles like "Tennis" and "Harry Potter". We suspect these to be precise waypoints, less common but crucial stops for cowboys who knew exactly where they were heading.</p> 
+<p>Geography rides tall in the saddle once again, partner. For the utility score, nearly every top-ranking article is tied to geographical themes. From sprawling regions to powerful nations, these landmarks continue to steer cowboys across the vast network. 
+    On the other hand, the quality score highlights seemingly more random articles like "Tennis" and "Harry Potter". We suspect these to be precise waypoints, less common but crucial stops for cowboys who knew exactly where they were heading. 
+    There is a very clear difference in the number of appearances of the top articles between the two scores, further emphasizing the distinction between the average and sum of centered weight scores, as we discussed above </p> 
 
 <h5><b>Scores Rewarding Fast Path Completion</b></h3>
 
 <p>Just as article weights rely on path distances, article times can only be determined after calculating the times for all trails. Instead of simply using the raw times taken to complete a path, 
-    we compute <b>adjusted path times</b> that factor in the optimal distance of each trail, scaling the times accordingly. For instance, since the most common start-target distance is 3, times for other distances are scaled to align with the median time of distance 3. 
+    we compute <b>adjusted path times</b> that factor in the optimal distance of each trail, scaling the times accordingly. Specifically, since the most common start-target distance is 3, times for other distances are scaled to align with the median time of distance 3. 
     This ensures that differences in path times caused by varying levels of difficulty, reflected in differing path distances, are accurately accounted for. </p>
 <p>Using these adjusted path times, we calculate <b>adjusted article times</b>, mirroring the two methods used for article weight scoring. 
     As before, the distinction between these two scores reflects the balance between quality and utility of an article to the players.</p>
 <ul>
     <li><b>Average of the Adjusted Times</b>: Represents the average adjusted time for each article</li>
-    <li><b>Sum of Centered Adjusted Times</b>: This score centers the adjusted path times by substratin their mean, then sums these centered values for all paths where the article appears.</li>
+    <li><b>Sum of Centered Adjusted Times</b>: This score centers the adjusted path times by substrating their mean, then sums these centered values for all paths where the article appears.</li>
 </ul>
 
 <div class="flourish-embed flourish-chart" data-src="visualisation/20890339"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20890339/thumbnail" width="100%" alt="chart visualization" /></noscript></div>
+<p> </p> 
 
 <p> Together, these scores reveal which articles are true trailblazers, helping players traverse the network of links with speed and precision. ADD MORE HERE</p> 
 
