@@ -21,8 +21,9 @@
     The first step is to define our strategy for selecting the next article given a current article and a target article. We could use the categories and their tiers. However, we run into problems if we just use the binary classifications provided to us by the categories. There is no clear way to evaluate distance between different completely category types. Thankfully, due to our embeddings, we already have a numeric representation of semantic distance! This makes our algorithm for playing Wikispeedia much simpler.    
 </p>
 
-<pre style="background-color: #333; color: white; padding: 10px; border-radius: 5px; border: 1px solid #ddd; overflow-x: auto;">
-<code>
+
+<pre style="background-color: #333; padding: 10px; border-radius: 5px; border: 1px solid #ddd; overflow-x: auto;">
+    <code style="color: white; font-family: 'Courier New', Courier, monospace;">
     For each start, end in paths:
     current_article = start
     while current_article != end:
@@ -30,7 +31,7 @@
             1. we have not visited
             2. has the smallest distance to the end of the path
         If no articles satisfy this, discard the path.
-</code>
+    </code>
 </pre>
 
 <p>
