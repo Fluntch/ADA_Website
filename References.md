@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Acknowledgements"
+title: 
 subtitle: "Thanks to the creators and contributors"
 ---
 
